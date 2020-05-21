@@ -1,0 +1,10 @@
+body {
+  font-family: 'youngserifregular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  background-color: #fff;
+}
+
+.nm-text-branding {
+  font-family: 'bagnard_regularregular';
+}
