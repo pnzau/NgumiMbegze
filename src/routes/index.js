@@ -6,6 +6,7 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { Home } from '../app';
 import { SongsList } from '../app/songs/index';
 import { themeConfigs } from '../styles/theme';
+import { FavoriteSongs } from '../app/songs/favoriteSongs';
 
 export const RouteManager = () => {
   const theme = themeConfigs();
@@ -17,6 +18,9 @@ export const RouteManager = () => {
             <Switch>
               <Route path='/songs'>
                 <SongsList />
+              </Route>
+              <Route path='/favorite-songs'>
+                <FavoriteSongs />
               </Route>
               <Route path='/'>
                 <Home />

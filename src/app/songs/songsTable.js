@@ -36,7 +36,7 @@ const Div = styled.div`
 export const SongsTable = () => {
   const titles = [
     '#',
-    '',
+    'Like',
     'Song',
     'Artist',
     'Daily Plays',

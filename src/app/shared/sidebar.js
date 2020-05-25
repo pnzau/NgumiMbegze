@@ -51,7 +51,7 @@ export const Sidebar = () => {
     {
       Icon: FavoriteRounded,
       text: 'Favorite Songs',
-      route: '/collection',
+      route: '/favorite-songs',
     },
     {
       Icon: PlayCircleOutlineRounded,
