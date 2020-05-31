@@ -1,11 +1,12 @@
 import React from 'react';
 
 import { Layout } from '../shared/layout';
+import { AlbumList } from './albumList';
 
-export const Playlist = () => {
+export const Albums = () => {
   return (
     <Layout>
-      <div>Hey ya</div>
+      <AlbumList />
     </Layout>
   );
 };

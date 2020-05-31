@@ -7,6 +7,9 @@ import { Home } from '../app';
 import { SongsList } from '../app/songs/index';
 import { themeConfigs } from '../styles/theme';
 import { FavoriteSongs } from '../app/songs/favoriteSongs';
+import { Albums } from '../app/albums';
+import { ViewAlbum } from '../app/albums/albumView';
+import { NowPlayingView } from '../app/songs/nowPlayingView';
 
 export const RouteManager = () => {
   const theme = themeConfigs();
@@ -18,6 +21,15 @@ export const RouteManager = () => {
             <Switch>
               <Route path='/songs'>
                 <SongsList />
+              </Route>
+              <Route exact path='/albums'>
+                <Albums />
+              </Route>
+              <Route path='/albums/:albumId'>
+                <ViewAlbum />
+              </Route>
+              <Route path='/now-playing'>
+                <NowPlayingView />
               </Route>
               <Route path='/favorite-songs'>
                 <FavoriteSongs />

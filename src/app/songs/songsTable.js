@@ -9,14 +9,10 @@ import {
   TableCell,
   TableHead,
   IconButton,
-  Typography,
+  Tooltip,
 } from '@material-ui/core';
 
-import {
-  ThumbUpRounded,
-  PlayArrowRounded,
-  PlaylistAddRounded,
-} from '@material-ui/icons';
+import { Heart, Play, AddToPlaylist } from '../../icons';
 
 const Div = styled.div`
   .nm-table {
@@ -34,31 +30,22 @@ const Div = styled.div`
 `;
 
 export const SongsTable = () => {
-  const titles = [
-    '#',
-    'Like',
-    'Song',
-    'Artist',
-    'Daily Plays',
-    'Time',
-    'Genre',
-    '',
-  ];
+  const titles = ['#', 'Like', 'Song', 'Artist', 'Time', 'Genre', ''];
   const data = [
     {
       number: 1,
       title: 'Gang gang',
       artist: 'Mkhaladam',
-      played: 3000,
+
       time: '4:13',
       genre: 'Hip Hop',
       like: false,
     },
     {
       number: 2,
-      title: 'Jazzing in the midnight',
+      title: 'Jazzing in the midnight â, î or ô',
       artist: 'Nkhurunzinza',
-      played: 3000,
+
       time: '4:13',
       genre: 'Jazz',
       like: false,
@@ -67,7 +54,7 @@ export const SongsTable = () => {
       number: 3,
       title: 'Cream top',
       artist: 'Langham',
-      played: 3000,
+
       time: '4:13',
       genre: 'Hip Hop',
       like: false,
@@ -76,7 +63,7 @@ export const SongsTable = () => {
       number: 4,
       title: 'Cheasy',
       artist: 'Made it tags',
-      played: 3000,
+
       time: '4:13',
       genre: 'Hip Hop',
       like: true,
@@ -85,7 +72,7 @@ export const SongsTable = () => {
       number: 5,
       title: 'Don Chidle',
       artist: 'Tuffletoff',
-      played: 3000,
+
       time: '4:13',
       genre: 'Hip Hop',
       like: false,
@@ -94,7 +81,7 @@ export const SongsTable = () => {
       number: 4,
       title: 'Kredi kiboom',
       artist: 'Mkhaladam',
-      played: 3000,
+
       time: '4:13',
       genre: 'Hip Hop',
       like: false,
@@ -103,9 +90,6 @@ export const SongsTable = () => {
   return (
     <Div className='w-100'>
       <Paper elevation={0} className='w-100'>
-        <Typography className='px-3' variant='body1'>
-          All Songs
-        </Typography>
         <TableContainer>
           <Table
             classes={{
@@ -138,7 +122,7 @@ export const SongsTable = () => {
                       className='nm-shadow'
                       color={datum.like ? 'secondary' : 'default'}
                     >
-                      <ThumbUpRounded fontSize='small' />
+                      <Heart color='inherit' />
                     </IconButton>
                   </TableCell>
                   <TableCell
@@ -154,13 +138,6 @@ export const SongsTable = () => {
                     }}
                   >
                     {datum.artist}
-                  </TableCell>
-                  <TableCell
-                    classes={{
-                      root: 'nm-table-cell-body',
-                    }}
-                  >
-                    {datum.played}
                   </TableCell>
                   <TableCell
                     classes={{
@@ -183,11 +160,13 @@ export const SongsTable = () => {
                   >
                     <div className='d-flex flex-row align-items-center justify-content-between'>
                       <IconButton className='nm-shadow' color='secondary'>
-                        <PlayArrowRounded fontSize='small' />
+                        <Play color='inherit' size='sm' />
                       </IconButton>
-                      <IconButton className='nm-shadow' color='default'>
-                        <PlaylistAddRounded fontSize='small' />
-                      </IconButton>
+                      <Tooltip title='Queue' placement='top'>
+                        <IconButton className='nm-shadow' color='secondary'>
+                          <AddToPlaylist color='inherit' size='sm' />
+                        </IconButton>
+                      </Tooltip>
                     </div>
                   </TableCell>
                 </TableRow>

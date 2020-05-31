@@ -5,6 +5,13 @@ body {
   background-color: #fff;
 }
 
+body button:focus,
+body input:focus,
+body select:focus,
+body textarea:focus {
+  outline: none;
+}
+
 .nm-text-branding {
   font-family: 'bagnard_regularregular';
 }

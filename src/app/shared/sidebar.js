@@ -8,16 +8,9 @@ import {
   ListItemText,
 } from '@material-ui/core';
 import styled from 'styled-components';
-import {
-  LibraryMusicRounded,
-  AlbumRounded,
-  FavoriteRounded,
-  PlayCircleOutlineRounded,
-  PlaylistPlayRounded,
-  QueueMusicRounded,
-} from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { Album, Headphone, Playlist, MusicNote, Record } from '../../icons';
 import { addToDefault } from '../utils';
 import { NowPlaying } from '../songs/nowPlaying';
 
@@ -30,43 +23,16 @@ const Div = styled.div`
   }
 
   .nm-item-text {
-    color: ${(props) => props.theme.palette.secondary.main};
+    color: ${(props) => props.theme.palette.primary.main};
   }
 `;
 
 export const Sidebar = () => {
   const history = useHistory();
   const { pathname } = useLocation();
-  const items = [
-    {
-      Icon: LibraryMusicRounded,
-      text: 'All Songs',
-      route: '/songs',
-    },
-    {
-      Icon: AlbumRounded,
-      text: 'Collections',
-      route: '/collection',
-    },
-    {
-      Icon: FavoriteRounded,
-      text: 'Favorite Songs',
-      route: '/favorite-songs',
-    },
-    {
-      Icon: PlayCircleOutlineRounded,
-      text: 'Now Playing',
-      route: '/playing',
-    },
-    {
-      Icon: QueueMusicRounded,
-      text: 'My Playlist',
-      route: '/playing',
-    },
-  ];
 
   const goTo = (path) => () => history.push(path);
-  const isSelected = (route) => route === pathname;
+  const isSelected = (route) => pathname.includes(route);
 
   return (
     <Div>
@@ -81,28 +47,82 @@ export const Sidebar = () => {
           <div className='d-flex flex-column h-100'>
             <div className='flex-grow-1'>
               <List>
-                {items.map(({ Icon, text, route }) => (
-                  <ListItem
-                    button
-                    key={text}
-                    selected={isSelected(route)}
-                    onClick={goTo(route)}
-                  >
-                    <ListItemIcon>
-                      <Icon
-                        color={isSelected(route) ? 'secondary' : 'inherit'}
-                        fontSize='large'
-                      />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={text}
-                      className={addToDefault(
-                        isSelected(route),
-                        'nm-item-text',
-                      )}
+                <ListItem
+                  button
+                  selected={isSelected('/songs')}
+                  onClick={goTo('/songs')}
+                >
+                  <ListItemIcon>
+                    <MusicNote
+                      size='lg'
+                      color={isSelected('/songs') ? 'primary' : 'inherit'}
                     />
-                  </ListItem>
-                ))}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={'Songs'}
+                    className={addToDefault(
+                      isSelected('/songs'),
+                      'nm-item-text',
+                    )}
+                  />
+                </ListItem>
+                <ListItem
+                  button
+                  selected={isSelected('/albums')}
+                  onClick={goTo('/albums')}
+                >
+                  <ListItemIcon>
+                    <Record
+                      size='lg'
+                      color={isSelected('/albums') ? 'primary' : 'inherit'}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={'Albums'}
+                    className={addToDefault(
+                      isSelected('/albums'),
+                      'nm-item-text',
+                    )}
+                  />
+                </ListItem>
+                <ListItem
+                  button
+                  selected={isSelected('/playlists')}
+                  onClick={goTo('/playlists')}
+                >
+                  <ListItemIcon>
+                    <Playlist
+                      size='lg'
+                      color={isSelected('/playlists') ? 'primary' : 'inherit'}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={'Playlists'}
+                    className={addToDefault(
+                      isSelected('/playlists'),
+                      'nm-item-text',
+                    )}
+                  />
+                </ListItem>
+                <ListItem
+                  button
+                  selected={isSelected('/now-playing')}
+                  onClick={goTo('/now-playing')}
+                >
+                  <ListItemIcon>
+                    <Headphone
+                      size='lg'
+                      color={isSelected('/now-playing') ? 'primary' : 'inherit'}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={'Now Playing'}
+                    className={addToDefault(
+                      isSelected('/now-playing'),
+                      'nm-item-text',
+                    )}
+                  />
+                </ListItem>
               </List>
             </div>
             <div className='d-flex flex-column w-100'>

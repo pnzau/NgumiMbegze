@@ -62,10 +62,10 @@ export const NowPlaying = () => {
       <div className='pt-4 px-2 pb-2 w-100 nm-header'>
         <Typography variant='caption'>Liquideep - Fairy tale</Typography>
       </div>
-      <div className='pt-3 w-100'>
+      {/* <div className='pt-3 w-100'>
         <MiniWave waveCount={15} pause={!playing} />
-      </div>
-      <SongPlayProgressBar />
+      </div> */}
+      {/* <SongPlayProgressBar />
       <div className='d-flex flex-row align-items-center justify-content-between pt-3 px-2'>
         <IconButton size='small' className='nm-shadow'>
           <ShuffleRounded />
@@ -96,7 +96,7 @@ export const NowPlaying = () => {
         >
           {pickIcon()}
         </IconButton>
-      </div>
+      </div> */}
     </Div>
   );
 };

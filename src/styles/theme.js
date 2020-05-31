@@ -1,5 +1,4 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { colors } from '@material-ui/core';
 
 const typography = {
   fontFamily: [
@@ -22,10 +21,10 @@ export const themeConfigs = () => {
     typography,
     palette: {
       primary: {
-        main: colors.lime['A400'],
+        main: '#011627',
       },
       secondary: {
-        main: colors.deepPurple[400],
+        main: '#e01e37',
       },
     },
   });
