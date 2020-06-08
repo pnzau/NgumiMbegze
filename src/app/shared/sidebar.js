@@ -10,20 +10,24 @@ import {
 import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { Album, Headphone, Playlist, MusicNote, Record } from '../../icons';
+import { Headphone, Playlist, MusicNote, Record } from '../../icons';
 import { addToDefault } from '../utils';
-import { NowPlaying } from '../songs/nowPlaying';
 
 const drawerWidth = 300;
 
 const Div = styled.div`
   .nm-drawer-paper {
-    width: ${drawerWidth}px;
     box-shadow: ${(props) => props.theme.shadows[5]};
   }
 
   .nm-item-text {
     color: ${(props) => props.theme.palette.primary.main};
+  }
+
+  ${(props) => props.theme.breakpoints.up('sm')} {
+    .nm-drawer-paper {
+      width: ${drawerWidth}px;
+    }
   }
 `;
 
@@ -36,7 +40,7 @@ export const Sidebar = () => {
 
   return (
     <Div>
-      <Hidden xsDown implementation='css'>
+      <Hidden smDown implementation='css'>
         <Drawer
           classes={{
             paper: 'nm-drawer-paper',
@@ -124,9 +128,6 @@ export const Sidebar = () => {
                   />
                 </ListItem>
               </List>
-            </div>
-            <div className='d-flex flex-column w-100'>
-              <NowPlaying />
             </div>
           </div>
         </Drawer>

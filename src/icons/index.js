@@ -10,6 +10,12 @@ import { ReactComponent as PlayIcon } from './play.svg';
 import { ReactComponent as AddToPlaylistIcon } from './add.svg';
 import { ReactComponent as SearchIcon } from './search.svg';
 import { ReactComponent as HeartIcon } from './heart.svg';
+import { ReactComponent as MenuIcon } from './menu.svg';
+import { ReactComponent as UpArrowIcon } from './arrow.svg';
+import { ReactComponent as DownArrowIcon } from './down.svg';
+import { ReactComponent as NextIcon } from './next.svg';
+import { ReactComponent as PreviousIcon } from './previous.svg';
+import { ReactComponent as PauseIcon } from './pause.svg';
 
 const baseIconStyles = css`
   font-size: ${(props) => {
@@ -101,5 +107,29 @@ export const Search = styled(SearchIcon)`
 `;
 
 export const Heart = styled(HeartIcon)`
+  ${baseIconStyles}
+`;
+
+export const Menu = styled(MenuIcon)`
+  ${baseIconStyles}
+`;
+
+export const UpArrow = styled(UpArrowIcon)`
+  ${baseIconStyles}
+`;
+
+export const DownArrow = styled(DownArrowIcon)`
+  ${baseIconStyles}
+`;
+
+export const Next = styled(NextIcon)`
+  ${baseIconStyles}
+`;
+
+export const Previous = styled(PreviousIcon)`
+  ${baseIconStyles}
+`;
+
+export const Pause = styled(PauseIcon)`
   ${baseIconStyles}
 `;

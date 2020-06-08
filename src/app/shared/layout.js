@@ -5,8 +5,15 @@ import { Sidebar } from './sidebar';
 
 const Div = styled.div`
   .nm-main-offset {
-    width: calc(100% - 300px);
+    width: 100%;
     float: right;
+  }
+
+  ${(props) => props.theme.breakpoints.up('md')} {
+    .nm-main-offset {
+      width: calc(100% - 300px);
+      float: right;
+    }
   }
 `;
 

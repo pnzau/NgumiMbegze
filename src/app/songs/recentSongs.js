@@ -30,7 +30,7 @@ export const RecentSongs = () => {
 
       <div className='d-flex flex-row align-items-center flex-wrap pt-3 pb-5'>
         {songs.map((song, i) => (
-          <div className='col-lg-3 col-6 pb-1' key={i}>
+          <div className='col-lg-3 col-md-6 col-6 pb-2' key={i}>
             <SongCard />
           </div>
         ))}
