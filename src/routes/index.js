@@ -9,7 +9,7 @@ import { themeConfigs } from '../styles/theme';
 import { FavoriteSongs } from '../app/songs/favoriteSongs';
 import { Albums } from '../app/albums';
 import { ViewAlbum } from '../app/albums/albumView';
-import { NowPlayingView } from '../app/songs/nowPlayingView';
+import { NowPlaying } from '../app/songs/nowPlaying';
 
 export const RouteManager = () => {
   const theme = themeConfigs();
@@ -29,7 +29,7 @@ export const RouteManager = () => {
                 <ViewAlbum />
               </Route>
               <Route path='/now-playing'>
-                <NowPlayingView />
+                <NowPlaying />
               </Route>
               <Route path='/favorite-songs'>
                 <FavoriteSongs />

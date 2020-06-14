@@ -16,10 +16,6 @@ import { addToDefault } from '../utils';
 const drawerWidth = 300;
 
 const Div = styled.div`
-  .nm-drawer-paper {
-    box-shadow: ${(props) => props.theme.shadows[5]};
-  }
-
   .nm-item-text {
     color: ${(props) => props.theme.palette.primary.main};
   }
@@ -47,6 +43,7 @@ export const Sidebar = () => {
           }}
           variant='permanent'
           anchor='left'
+          elevation={0}
         >
           <div className='d-flex flex-column h-100'>
             <div className='flex-grow-1'>

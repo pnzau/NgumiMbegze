@@ -20,7 +20,7 @@ export const Home = () => {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       history.push('/songs');
-    }, 5000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [history]);
   return (

@@ -15,14 +15,14 @@ import { Play, AddToPlaylist } from '../../icons';
 
 const Div = styled.div`
   .nm-shadow {
-    box-shadow: ${(props) => props.theme.shadows[3]};
+    box-shadow: ${(props) => props.theme.shadows[1]};
   }
 `;
 
 export const SongCard = () => {
   return (
     <Div className='w-100'>
-      <Card className='w-100'>
+      <Card variant='outlined' className='w-100'>
         <CardActionArea>
           <CardMedia
             component='img'

@@ -25,7 +25,7 @@ const Div = styled.div`
   }
 
   .nm-shadow {
-    box-shadow: ${(props) => props.theme.shadows[3]};
+    box-shadow: ${(props) => props.theme.shadows[1]};
   }
 `;
 

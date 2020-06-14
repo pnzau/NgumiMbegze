@@ -16,7 +16,7 @@ import { Play, AddToPlaylist } from '../../icons';
 
 const Div = styled.div`
   .nm-shadow {
-    box-shadow: ${(props) => props.theme.shadows[3]};
+    box-shadow: ${(props) => props.theme.shadows[1]};
   }
 `;
 
@@ -26,7 +26,7 @@ export const AlbumCard = () => {
 
   return (
     <Div className='w-100 pb-3'>
-      <Card className='w-100'>
+      <Card variant='outlined' className='w-100'>
         <CardActionArea onClick={goTo}>
           <CardMedia
             component='img'

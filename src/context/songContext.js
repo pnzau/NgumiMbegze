@@ -1,11 +1,16 @@
-import React from 'react';
-import { DragDropContext } from 'react-beautiful-dnd';
+import React, { useReducer, createContext } from 'react';
 
-import { Layout } from '../shared/layout';
-import { DropSongArea } from './dropSong';
+export const songActions = {
+  TOGGLE_NOW_PLAYING_QUEUE: 'TOGGLE_NOW_PLAYING_QUEUE',
+  TOGGLE_PLAY_SONG: 'TOGGLE_PLAY_SONG',
+};
 
-export const NowPlayingView = () => {
-  const data = [
+export const SongContext = createContext();
+
+const initialState = {
+  showNowPlayingQueue: false,
+  playing: false,
+  songs: [
     {
       id: '10',
       number: 1,
@@ -66,15 +71,32 @@ export const NowPlayingView = () => {
       genre: 'Hip Hop',
       like: false,
     },
-  ];
+  ],
+};
 
-  const onDragEnd = () => {};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case songActions.TOGGLE_NOW_PLAYING_QUEUE:
+      return {
+        ...state,
+        showNowPlayingQueue: !state.showNowPlayingQueue,
+      };
+    case songActions.TOGGLE_PLAY_SONG:
+      return {
+        ...state,
+        playing: !state.playing,
+      };
+    default:
+      return state;
+  }
+};
+
+export const SongContextProvider = (props) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <Layout>
-      <DragDropContext onDragEnd={onDragEnd}>
-        <DropSongArea data={data} />
-      </DragDropContext>
-    </Layout>
+    <SongContext.Provider value={[state, dispatch]}>
+      {props.children}
+    </SongContext.Provider>
   );
 };

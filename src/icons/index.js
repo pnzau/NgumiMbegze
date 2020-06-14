@@ -16,6 +16,9 @@ import { ReactComponent as DownArrowIcon } from './down.svg';
 import { ReactComponent as NextIcon } from './next.svg';
 import { ReactComponent as PreviousIcon } from './previous.svg';
 import { ReactComponent as PauseIcon } from './pause.svg';
+import { ReactComponent as ShuffleIcon } from './random.svg';
+import { ReactComponent as RepeatIcon } from './repeat.svg';
+import { ReactComponent as LeftArrowIcon } from './left-arrow.svg';
 
 const baseIconStyles = css`
   font-size: ${(props) => {
@@ -23,7 +26,7 @@ const baseIconStyles = css`
       case 'lg':
         return '2.5rem';
       case 'md':
-        return '2rem';
+        return '1.5rem';
       case 'sm':
         return '0.8rem';
       default:
@@ -96,6 +99,18 @@ export const Record = styled(RecordIcon)`
 
 export const Play = styled(PlayIcon)`
   ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
 `;
 
 export const AddToPlaylist = styled(AddToPlaylistIcon)`
@@ -116,20 +131,128 @@ export const Menu = styled(MenuIcon)`
 
 export const UpArrow = styled(UpArrowIcon)`
   ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
 `;
 
 export const DownArrow = styled(DownArrowIcon)`
   ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
 `;
 
 export const Next = styled(NextIcon)`
   ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
 `;
 
 export const Previous = styled(PreviousIcon)`
   ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
 `;
 
 export const Pause = styled(PauseIcon)`
   ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
+`;
+
+export const Repeat = styled(RepeatIcon)`
+  ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
+`;
+
+export const Shuffle = styled(ShuffleIcon)`
+  ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
+`;
+
+export const LeftArrow = styled(LeftArrowIcon)`
+  ${baseIconStyles}
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
 `;
