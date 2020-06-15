@@ -12,7 +12,7 @@ import {
   Tooltip,
 } from '@material-ui/core';
 
-import { Heart, Play, AddToPlaylist } from '../../icons';
+import { Like, Play, Queue } from '../../icons';
 
 const Div = styled.div`
   .nm-table {
@@ -122,7 +122,7 @@ export const SongsTable = () => {
                       className='nm-shadow'
                       color={datum.like ? 'secondary' : 'default'}
                     >
-                      <Heart color='inherit' />
+                      <Like size='normal' color='inherit' />
                     </IconButton>
                   </TableCell>
                   <TableCell
@@ -164,7 +164,7 @@ export const SongsTable = () => {
                       </IconButton>
                       <Tooltip title='Queue' placement='top'>
                         <IconButton className='nm-shadow' color='secondary'>
-                          <AddToPlaylist color='inherit' size='sm' />
+                          <Queue color='inherit' size='sm' />
                         </IconButton>
                       </Tooltip>
                     </div>

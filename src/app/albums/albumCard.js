@@ -12,7 +12,7 @@ import {
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
-import { Play, AddToPlaylist } from '../../icons';
+import { Play, Queue } from '../../icons';
 
 const Div = styled.div`
   .nm-shadow {
@@ -47,11 +47,11 @@ export const AlbumCard = () => {
         </CardActionArea>
         <CardActions>
           <IconButton className='nm-shadow' color='secondary'>
-            <Play color='inherit' />
+            <Play size='normal' color='inherit' />
           </IconButton>
           <IconButton className='nm-shadow' color='secondary'>
             <Tooltip title='Queue' placement='top'>
-              <AddToPlaylist color='inherit' />
+              <Queue size='normal' color='inherit' />
             </Tooltip>
           </IconButton>
         </CardActions>

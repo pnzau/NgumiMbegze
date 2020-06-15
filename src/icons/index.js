@@ -1,36 +1,38 @@
 import styled, { css } from 'styled-components';
 
-import { ReactComponent as AlbumIcon } from './album.svg';
-import { ReactComponent as FireIcon } from './fire.svg';
-import { ReactComponent as PlaylistIcon } from './music-and-multimedia.svg';
+import { ReactComponent as FavoriteIcon } from './fire.svg';
+import { ReactComponent as PlaylistIcon } from './playlists.svg';
 import { ReactComponent as HeadphonesIcon } from './headphones.svg';
-import { ReactComponent as MusicNoteIcon } from './musical-note.svg';
-import { ReactComponent as RecordIcon } from './record.svg';
-import { ReactComponent as PlayIcon } from './play.svg';
-import { ReactComponent as AddToPlaylistIcon } from './add.svg';
+import { ReactComponent as SongsIcon } from './songs.svg';
+import { ReactComponent as AlbumIcon } from './record.svg';
+import { ReactComponent as PlayIcon } from './032-play.svg';
+import { ReactComponent as QueueIcon } from './plus.svg';
 import { ReactComponent as SearchIcon } from './search.svg';
-import { ReactComponent as HeartIcon } from './heart.svg';
-import { ReactComponent as MenuIcon } from './menu.svg';
-import { ReactComponent as UpArrowIcon } from './arrow.svg';
-import { ReactComponent as DownArrowIcon } from './down.svg';
-import { ReactComponent as NextIcon } from './next.svg';
-import { ReactComponent as PreviousIcon } from './previous.svg';
+import { ReactComponent as LikeIcon } from './like.svg';
+import { ReactComponent as DragIcon } from './050-arrow.svg';
+import { ReactComponent as ChevronRight } from './026-right chevron.svg';
+import { ReactComponent as PreviousIcon } from './009-undo.svg';
 import { ReactComponent as PauseIcon } from './pause.svg';
-import { ReactComponent as ShuffleIcon } from './random.svg';
-import { ReactComponent as RepeatIcon } from './repeat.svg';
-import { ReactComponent as LeftArrowIcon } from './left-arrow.svg';
+import { ReactComponent as ShuffleIcon } from './004-suffle.svg';
+import { ReactComponent as RepeatOnceIcon } from './046-infinity.svg';
+import { ReactComponent as RepeatIcon } from './013-reload.svg';
+import { ReactComponent as ArtistsIcon } from './artists.svg';
+import { ReactComponent as InfoIcon } from './info.svg';
+import { ReactComponent as DeleteIcon } from './delete.svg';
 
 const baseIconStyles = css`
   font-size: ${(props) => {
     switch (props.size) {
       case 'lg':
-        return '2.5rem';
+        return '3.4rem';
       case 'md':
-        return '1.5rem';
+        return '3rem';
+      case 'normal':
+        return '2rem';
       case 'sm':
-        return '0.8rem';
+        return '1.8rem';
       default:
-        return '1.2rem';
+        return '2.8rem';
     }
   }};
   fill: ${(props) => {
@@ -47,13 +49,21 @@ const baseIconStyles = css`
   }};
   width: 1em;
   height: 1em;
+  g {
+    fill: ${(props) => {
+      switch (props.color) {
+        case 'secondary':
+          return props.theme.palette.secondary.main;
+        case 'primary':
+          return props.theme.palette.primary.main;
+        default:
+          return 'currentColor';
+      }
+    }};
+  }
 `;
 
-export const Album = styled(AlbumIcon)`
-  ${baseIconStyles}
-`;
-
-export const Fire = styled(FireIcon)`
+export const Favorite = styled(FavoriteIcon)`
   ${baseIconStyles}
 `;
 
@@ -65,11 +75,11 @@ export const Headphone = styled(HeadphonesIcon)`
   ${baseIconStyles}
 `;
 
-export const MusicNote = styled(MusicNoteIcon)`
+export const Music = styled(SongsIcon)`
   ${baseIconStyles}
 `;
 
-export const Record = styled(RecordIcon)`
+export const Album = styled(AlbumIcon)`
   ${baseIconStyles}
   circle: {
     fill: ${(props) => {
@@ -99,21 +109,9 @@ export const Record = styled(RecordIcon)`
 
 export const Play = styled(PlayIcon)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
 `;
 
-export const AddToPlaylist = styled(AddToPlaylistIcon)`
+export const Queue = styled(QueueIcon)`
   ${baseIconStyles}
 `;
 
@@ -121,138 +119,63 @@ export const Search = styled(SearchIcon)`
   ${baseIconStyles}
 `;
 
-export const Heart = styled(HeartIcon)`
+export const Like = styled(LikeIcon)`
   ${baseIconStyles}
 `;
 
-export const Menu = styled(MenuIcon)`
+export const Drag = styled(DragIcon)`
   ${baseIconStyles}
 `;
 
-export const UpArrow = styled(UpArrowIcon)`
+export const UpArrow = styled(ChevronRight)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
+  transform:rotate(-90deg);
 `;
 
-export const DownArrow = styled(DownArrowIcon)`
+export const DownArrow = styled(ChevronRight)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
+  transform:rotate(90deg);
 `;
 
-export const Next = styled(NextIcon)`
+export const LeftArrow = styled(ChevronRight)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
+  transform:rotate(180deg);
+`;
+
+export const Next = styled(PreviousIcon)`
+  ${baseIconStyles}
+  transform:rotate(180deg);
+  transform: scaleX(-1);
 `;
 
 export const Previous = styled(PreviousIcon)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
 `;
 
 export const Pause = styled(PauseIcon)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
 `;
 
 export const Repeat = styled(RepeatIcon)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
+`;
+
+export const RepeatOnce = styled(RepeatOnceIcon)`
+  ${baseIconStyles}
 `;
 
 export const Shuffle = styled(ShuffleIcon)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
 `;
 
-export const LeftArrow = styled(LeftArrowIcon)`
+export const Artists = styled(ArtistsIcon)`
   ${baseIconStyles}
-  g {
-    fill: ${(props) => {
-      switch (props.color) {
-        case 'secondary':
-          return props.theme.palette.secondary.main;
-        case 'primary':
-          return props.theme.palette.primary.main;
-        default:
-          return 'currentColor';
-      }
-    }};
-  }
+`;
+
+export const Info = styled(InfoIcon)`
+  ${baseIconStyles}
+`;
+
+export const Delete = styled(DeleteIcon)`
+  ${baseIconStyles}
 `;

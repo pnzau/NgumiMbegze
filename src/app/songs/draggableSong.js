@@ -1,8 +1,13 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import { TableRow, TableCell, IconButton } from '@material-ui/core';
+import { TableRow, TableCell } from '@material-ui/core';
+import styled from 'styled-components';
 
-import { Menu } from '../../icons';
+import { Drag } from '../../icons';
+
+const Div = styled.div`
+  color: rgba(0, 0, 0, 0.54);
+`;
 
 export const DraggableSong = (props) => {
   const { d, index } = props;
@@ -13,7 +18,7 @@ export const DraggableSong = (props) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          className='py-3 my-2 mx-2'
+          className='py-3 my-2 mx-2 w-100'
         >
           <TableCell
             classes={{
@@ -48,9 +53,9 @@ export const DraggableSong = (props) => {
               root: 'nm-table-cell-body',
             }}
           >
-            <IconButton disabled className='nm-shadow'>
-              <Menu color='inherit' />
-            </IconButton>
+            <Div>
+              <Drag size='sm' color='inherit' />
+            </Div>
           </TableCell>
         </TableRow>
       )}

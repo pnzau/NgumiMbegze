@@ -20,6 +20,7 @@ import {
   Repeat,
   LeftArrow,
 } from '../../icons';
+import { SongBar } from './songBar';
 
 const Div = styled.div`
   .nm-shadow {
@@ -28,7 +29,15 @@ const Div = styled.div`
 
   .sp-art-image {
     width: 100%;
-    max-height: 400px;
+    height: 500px;
+    background-image: url(/art/album_cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .sp-arrow-back {
+    margin-bottom: -70px;
   }
 `;
 
@@ -46,7 +55,7 @@ const NowPlayingView = () => {
       type: songActions.TOGGLE_PLAY_SONG,
     });
 
-  const handleGoBack = () => history.goBack();
+  const handleGoBack = () => history.push('/songs');
 
   return (
     <Div className='w-100'>
@@ -54,58 +63,63 @@ const NowPlayingView = () => {
         <>
           <div className='row mx-0'>
             <div className='col-12'>
-              <div className='d-flex flex-row justify-content-start'>
-                <IconButton onClick={handleGoBack}>
-                  <LeftArrow />
-                </IconButton>
-              </div>
-              <div className='col-12'>
-                <img
-                  alt='album cover'
-                  src='/art/album_cover.jpg'
-                  className='img-fluid rounded sp-art-image'
-                />
-              </div>
-              <div className='col-12'>
-                <div className='d-flex flex-row justify-content-center pt-4 pb-3'>
-                  <IconButton color='primary' className='px-3'>
-                    <Shuffle size='md' />
-                  </IconButton>
-                  <IconButton color='primary' className='px-3'>
-                    <Previous size='md' />
-                  </IconButton>
-                  <IconButton
-                    onClick={handlePlaySong}
-                    color='secondary'
-                    className='nm-shadow mx-5'
+              <IconButton
+                className='sp-arrow-back'
+                color='primary'
+                onClick={handleGoBack}
+              >
+                <LeftArrow size='sm' />
+              </IconButton>
+              <div className='sp-art-image rounded' />
+            </div>
+            <div className='col-12'>
+              <div className='d-flex flex-row justify-content-center'>
+                <div className='d-flex flex-column justify-content-center pt-2 pb-3'>
+                  <Typography align='center' variant='h5' color='textPrimary'>
+                    Sink or swim
+                  </Typography>
+                  <Typography align='center' variant='h6' color='textSecondary'>
+                    Circles
+                  </Typography>
+                  <Typography
+                    align='center'
+                    variant='body1'
+                    color='textSecondary'
                   >
-                    {state.playing ? <Play size='lg' /> : <Pause size='lg' />}
-                  </IconButton>
-                  <IconButton color='primary' className='px-3'>
-                    <Next size='md' />
-                  </IconButton>
-                  <IconButton color='primary' className='px-3'>
-                    <Repeat size='md' />
-                  </IconButton>
-                </div>
-                <div className='d-flex flex-row justify-content-center pt-1 pb-2'>
-                  <IconButton onClick={handleShowSong}>
-                    <UpArrow size='sm' />
-                  </IconButton>
+                    Mac miller
+                  </Typography>
                 </div>
               </div>
             </div>
-            <div className='col-4'>
-              <div className='d-flex flex-column justify-content-end h-100'>
-                <div className='d-flex flex-column justify-content-end flex-grow-1 pb-3'>
-                  <Typography variant='h4'>Mac miller</Typography>
-                  <Typography variant='h5' color='textSecondary'>
-                    Sink or swim
-                  </Typography>
-                  <Typography variant='body1' color='textSecondary'>
-                    Hip-Hop
-                  </Typography>
-                </div>
+            <div className='col-12'>
+              <SongBar />
+            </div>
+            <div className='col-12'>
+              <div className='d-flex flex-row justify-content-center pb-1'>
+                <IconButton color='primary' className='px-3'>
+                  <Shuffle />
+                </IconButton>
+                <IconButton color='primary' className='px-3'>
+                  <Previous size='md' />
+                </IconButton>
+                <IconButton
+                  onClick={handlePlaySong}
+                  color='secondary'
+                  className='nm-shadow mx-5'
+                >
+                  {state.playing ? <Play size='lg' /> : <Pause size='lg' />}
+                </IconButton>
+                <IconButton color='primary' className='px-3'>
+                  <Next size='md' />
+                </IconButton>
+                <IconButton color='primary' className='px-3'>
+                  <Repeat />
+                </IconButton>
+              </div>
+              <div className='d-flex flex-row justify-content-center pt-1 pb-2'>
+                <IconButton onClick={handleShowSong}>
+                  <UpArrow size='sm' />
+                </IconButton>
               </div>
             </div>
           </div>

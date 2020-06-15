@@ -10,7 +10,7 @@ import {
 import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { Headphone, Playlist, MusicNote, Record } from '../../icons';
+import { Headphone, Playlist, Music, Album, Artists } from '../../icons';
 import { addToDefault } from '../utils';
 
 const drawerWidth = 300;
@@ -54,7 +54,7 @@ export const Sidebar = () => {
                   onClick={goTo('/songs')}
                 >
                   <ListItemIcon>
-                    <MusicNote
+                    <Music
                       size='lg'
                       color={isSelected('/songs') ? 'primary' : 'inherit'}
                     />
@@ -73,7 +73,7 @@ export const Sidebar = () => {
                   onClick={goTo('/albums')}
                 >
                   <ListItemIcon>
-                    <Record
+                    <Album
                       size='lg'
                       color={isSelected('/albums') ? 'primary' : 'inherit'}
                     />
@@ -82,6 +82,25 @@ export const Sidebar = () => {
                     primary={'Albums'}
                     className={addToDefault(
                       isSelected('/albums'),
+                      'nm-item-text',
+                    )}
+                  />
+                </ListItem>
+                <ListItem
+                  button
+                  selected={isSelected('/artists')}
+                  onClick={goTo('/artists')}
+                >
+                  <ListItemIcon>
+                    <Artists
+                      size='lg'
+                      color={isSelected('/artists') ? 'primary' : 'inherit'}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={'Artists'}
+                    className={addToDefault(
+                      isSelected('/artists'),
                       'nm-item-text',
                     )}
                   />

@@ -21,7 +21,7 @@ export const AlbumList = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position='start'>
-                <Search size='md' />
+                <Search size='sm' />
               </InputAdornment>
             ),
           }}

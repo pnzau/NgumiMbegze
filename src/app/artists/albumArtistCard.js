@@ -10,6 +10,7 @@ import {
   Tooltip,
 } from '@material-ui/core';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 import { Play, Queue } from '../../icons';
 
@@ -19,22 +20,25 @@ const Div = styled.div`
   }
 `;
 
-export const SongCard = () => {
+export const AlbumArtistCard = () => {
+  const history = useHistory();
+  const goTo = () => history.push('/albums/23');
+
   return (
-    <Div className='w-100'>
+    <Div className='w-100 pb-3'>
       <Card variant='outlined' className='w-100'>
-        <CardActionArea>
+        <CardActionArea onClick={goTo}>
           <CardMedia
             component='img'
             alt='Album'
             height='140'
-            image='art/album_cover.jpg'
+            image='/art/album_cover.jpg'
             title='Album'
           />
           <CardContent>
-            <Typography variant='body1'>Mac miller</Typography>
+            <Typography variant='body1'>Circles</Typography>
             <Typography variant='body2' color='textSecondary'>
-              Swimming in circles
+              2018
             </Typography>
           </CardContent>
         </CardActionArea>
